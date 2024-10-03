@@ -4,6 +4,7 @@ import requests
 
 from .models import CrawlConfig
 import logging
+from crawler.request_processor import RequestProcessor
 
 logger = logging.getLogger(__name__)
 
@@ -20,18 +21,14 @@ class BaseCrawlService:
 class NobitexCrawlService(BaseCrawlService):
 
     def fetch(self):
-        try:
-            crawl_config = self._conf
-            logger.info("reached hereeeeee")
-            logger.info(f"helper_data: {crawl_config.helper_data}")
-            url = list(crawl_config.helper_data.keys())[0]
-            logger.info("reached here")
-            btc_usdt = requests.get(url).json()["lastTradePrice"]
-            logger.info("reach here 2")
-            logger.info(f"btc_usdt: {btc_usdt}")
-            return float(btc_usdt)
-        except Exception as e:
-            logger.error(f"Error in NobitexCrawlService.fetch: {e}")
-            raise e
+        response = self._get_response()
+        price = self._get_price(response)
+        logger.info(f"{self._conf.valuable_object.title}: {price}")
+        return float(price)
 
-# SOLID PRINCIPLES SHOULD BE CONSIDERED
+    def _get_response(self):
+        request = RequestProcessor(self._conf.get_url())
+        return request.get_request()
+
+    def _get_price(self, response):
+        return response.json()["lastTradePrice"]

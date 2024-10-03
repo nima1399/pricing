@@ -1,4 +1,8 @@
 from django.db import models
+from django.utils import timezone
+
+from core.manager import ActiveManager
+
 
 # Create your models here.
 class BaseModel(models.Model):
@@ -7,8 +11,12 @@ class BaseModel(models.Model):
     delete_date = models.DateTimeField(null=True, blank=True)
     is_deleted = models.BooleanField(default=False)
 
+    objects = models.Manager()
+    active_objects = ActiveManager()
+
     def delete(self, using=None, keep_parents=False):
         self.is_deleted = True
+        self.delete_date = timezone.now()
         self.save()
 
 class ValuableGroup(BaseModel):
@@ -48,6 +56,13 @@ class CrawlConfig(BaseModel):
 
     def __str__(self):
         return f"{self.crawl_source.title} - {self.valuable_object.title}"
+
+    def get_url(self):
+        return list(self.helper_data.keys())[0]
+
+    def increase_priority(self):
+        self.priority += 1
+        self.save()
 
 class ValuableRecord(BaseModel):
     crawl_config = models.ForeignKey(CrawlConfig, on_delete=models.CASCADE)

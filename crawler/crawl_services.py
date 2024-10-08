@@ -1,12 +1,13 @@
+import logging
 from abc import abstractmethod
 
 import requests
 
 from .models import CrawlConfig
-import logging
 from crawler.request_processor import RequestProcessor
 
 logger = logging.getLogger(__name__)
+
 
 class BaseCrawlService:
 

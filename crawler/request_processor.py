@@ -1,11 +1,19 @@
+import logging
+
 import requests
-from exceptions import ServerError, ClientError
-from crawler.crawl_services import logger
+from crawler.exceptions import ServerError, ClientError
+
+logger = logging.getLogger(__name__)
 
 
 class RequestProcessor:
 
-    def __init__(self, url, header = None, body = None,):
+    def __init__(
+        self,
+        url,
+        header=None,
+        body=None,
+    ):
         self._url = url
         self._header = header or {}
         self._body = body or {}
@@ -15,7 +23,9 @@ class RequestProcessor:
             response = requests.get(self._url)
             return response
         except Exception as e:
-            raise requests.exceptions.RequestException(f"can not send request for reason : {str(e)}")
+            raise requests.exceptions.RequestException(
+                f"can not send request for reason : {str(e)}"
+            )
 
     def _check_status(self, status: int, response):
         if status == 200:
@@ -26,4 +36,3 @@ class RequestProcessor:
         elif 600 > status >= 500:
             logger.error(f"Request failed due to Server Error: {response.text}")
             raise ServerError
-

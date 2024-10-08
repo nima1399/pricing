@@ -19,12 +19,14 @@ class BaseModel(models.Model):
         self.delete_date = timezone.now()
         self.save()
 
+
 class ValuableGroup(BaseModel):
     title = models.CharField(max_length=255)
     description = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return self.title
+
 
 class ValuableObject(BaseModel):
     title = models.CharField(max_length=255)
@@ -34,9 +36,11 @@ class ValuableObject(BaseModel):
     def __str__(self):
         return self.title
 
+
 class CrawlSourceType(models.TextChoices):
-    WS = 'ws', 'WebSocket'
-    TOKEN = 'token', 'Token'
+    WS = "ws", "WebSocket"
+    TOKEN = "token", "Token"
+
 
 class CrawlSource(BaseModel):
     title = models.CharField(max_length=255)
@@ -47,6 +51,7 @@ class CrawlSource(BaseModel):
 
     def __str__(self):
         return self.title
+
 
 class CrawlConfig(BaseModel):
     crawl_source = models.ForeignKey(CrawlSource, on_delete=models.CASCADE)
@@ -62,7 +67,7 @@ class CrawlConfig(BaseModel):
 
     def increase_priority(self):
         self.priority += 1
-        self.save()
+
 
 class ValuableRecord(BaseModel):
     crawl_config = models.ForeignKey(CrawlConfig, on_delete=models.CASCADE)

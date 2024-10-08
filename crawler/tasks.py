@@ -2,10 +2,12 @@ import logging
 
 from celery import shared_task
 
-from task_handler import crawl_handler
+from crawler.task_handler import CrawlHandlerService
+
 logger = logging.getLogger(__name__)
+
 
 @shared_task
 def crawl():
-    crawl_handler()
-
+    logger.info("Crawl task started")
+    CrawlHandlerService.crawl_handler()

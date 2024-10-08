@@ -1,7 +1,13 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import ValuableObject, ValuableGroup, ValuableRecord, CrawlConfig, CrawlSource
+from .models import (
+    ValuableObject,
+    ValuableGroup,
+    ValuableRecord,
+    CrawlConfig,
+    CrawlSource,
+)
 
 admin.site.register(ValuableObject)
 admin.site.register(ValuableGroup)

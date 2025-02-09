@@ -1,40 +1,33 @@
-import os
-
-
-import django
 from django.apps import apps
 import pytest
 from django.utils import timezone
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "base.settings")
-django.setup()
-
 
 @pytest.fixture
 def create_models():
-    ValuableGroup = apps.get_model("crawler", "ValuableGroup")
-    ValuableObject = apps.get_model("crawler", "ValuableObject")
-    CrawlSource = apps.get_model("crawler", "CrawlSource")
-    CrawlConfig = apps.get_model("crawler", "CrawlConfig")
-    ValuableRecord = apps.get_model("crawler", "ValuableRecord")
+    valuable_group_module = apps.get_model("crawler", "ValuableGroup")
+    valuable_object_module = apps.get_model("crawler", "ValuableObject")
+    crawl_source_module = apps.get_model("crawler", "CrawlSource")
+    crawl_config_module = apps.get_model("crawler", "CrawlConfig")
+    valuable_record_module = apps.get_model("crawler", "ValuableRecord")
 
     # Create instances of models
-    valuable_group = ValuableGroup.objects.create(
+    valuable_group = valuable_group_module.objects.create(
         title="Group 1", description="Description 1"
     )
-    valuable_object = ValuableObject.objects.create(
+    valuable_object = valuable_object_module.objects.create(
         title="Object 1", description="Description 1", group=valuable_group
     )
-    crawl_source = CrawlSource.objects.create(
+    crawl_source = crawl_source_module.objects.create(
         title="Source 1", base_url="http://example.com", is_valid=True, type="ws"
     )
-    crawl_config = CrawlConfig.objects.create(
+    crawl_config = crawl_config_module.objects.create(
         crawl_source=crawl_source,
         valuable_object=valuable_object,
         helper_data={"http://example.com": "data"},
         priority=1,
     )
-    valuable_record = ValuableRecord.objects.create(
+    valuable_record = valuable_record_module.objects.create(
         crawl_config=crawl_config, date=timezone.now(), value=100.0
     )
 

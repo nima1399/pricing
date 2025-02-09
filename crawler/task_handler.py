@@ -1,13 +1,7 @@
 import logging
-from abc import abstractmethod
 
-from celery import shared_task
-from django.utils.timezone import now
-import requests
-
-from .crawl_services import NobitexCrawlService
-from core.manager import ActiveManager
-from .models import ValuableObject, CrawlConfig, ValuableRecord
+from crawler.crawl_services import NobitexCrawlService
+from crawler.models import ValuableObject, CrawlConfig
 
 logger = logging.getLogger(__name__)
 
@@ -35,13 +29,9 @@ class CrawlHandlerService:
     def create_valuable_record(crawl_configs):
         for crawl_config in crawl_configs:
             try:
-                value = CrawlHandlerService.get_value(crawl_config.id)
+                CrawlHandlerService.get_value(crawl_config.id)
                 logger.info("Got value")
 
-                ValuableRecord.active_objects.create(
-                    crawl_config=crawl_config, date=now(), value=value
-                ).save()
-                logger.info("Created ValuableRecord")
                 break
             except Exception as e:
                 logger.error(f"Error in crawl task: {e}")

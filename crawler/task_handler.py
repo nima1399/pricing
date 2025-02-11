@@ -1,7 +1,9 @@
 import logging
 
+from django.utils.timezone import now
+
 from crawler.crawl_services import NobitexCrawlService
-from crawler.models import ValuableObject, CrawlConfig
+from crawler.models import ValuableObject, CrawlConfig, ValuableRecord
 
 logger = logging.getLogger(__name__)
 
@@ -29,9 +31,12 @@ class CrawlHandlerService:
     def create_valuable_record(crawl_configs):
         for crawl_config in crawl_configs:
             try:
-                CrawlHandlerService.get_value(crawl_config.id)
+                value = CrawlHandlerService.get_value(crawl_config.id)
                 logger.info("Got value")
-
+                ValuableRecord.active_objects.create(
+                    crawl_config=crawl_config, date=now(), value=value
+                ).save()
+                logger.info("Created ValuableRecord")
                 break
             except Exception as e:
                 logger.error(f"Error in crawl task: {e}")

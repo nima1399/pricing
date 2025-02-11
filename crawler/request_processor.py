@@ -1,7 +1,6 @@
 import logging
 
 import requests
-from crawler.exceptions import ServerError, ClientError
 
 logger = logging.getLogger(__name__)
 
@@ -27,12 +26,12 @@ class RequestProcessor:
                 f"can not send request for reason : {str(e)}"
             )
 
-    def _check_status(self, status: int, response):
-        if status == 200:
-            return
-        elif 500 > status >= 400:
-            logger.error(f"Request failed due to ValidationError: {response.text}")
-            raise ClientError
-        elif 600 > status >= 500:
-            logger.error(f"Request failed due to Server Error: {response.text}")
-            raise ServerError
+    # def _check_status(self, status: int, response):
+    #     if status == 200:
+    #         return
+    #     elif 500 > status >= 400:
+    #         logger.error(f"Request failed due to ValidationError: {response.text}")
+    #         raise ClientError
+    #     elif 600 > status >= 500:
+    #         logger.error(f"Request failed due to Server Error: {response.text}")
+    #         raise ServerError

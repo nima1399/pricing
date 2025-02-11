@@ -48,4 +48,3 @@ repos:
         - celery==5.4.0
         - psycopg2-binary==2.9.9
         - pytest-django==4.9.0
-    language_version: ./.venv/bin/python

@@ -1,0 +1,482 @@
+ 
+ -------------- celery@nima-ROG-Strix-G614JI-G614JI v5.4.0 (opalescent)
+--- ***** ----- 
+-- ******* ---- Linux-6.11.0-17-generic-x86_64-with-glibc2.39 2025-02-23 14:03:49
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         base:0x740cf6349bb0
+- ** ---------- .> transport:   redis://localhost:6379/0
+- ** ---------- .> results:     disabled://
+- *** --- * --- .> concurrency: 20 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . crawler.tasks.crawl
+
+[2025-02-23 14:03:50,149: WARNING/MainProcess] /home/nima/PycharmProjects/pricing/.venv/lib/python3.12/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+[2025-02-23 14:03:50,154: INFO/MainProcess] Connected to redis://localhost:6379/0
+[2025-02-23 14:03:50,154: WARNING/MainProcess] /home/nima/PycharmProjects/pricing/.venv/lib/python3.12/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+[2025-02-23 14:03:50,155: INFO/MainProcess] mingle: searching for neighbors
+[2025-02-23 14:03:51,160: INFO/MainProcess] mingle: all alone
+[2025-02-23 14:03:51,167: INFO/MainProcess] celery@nima-ROG-Strix-G614JI-G614JI ready.
+[2025-02-23 14:03:51,169: INFO/MainProcess] Task crawler.tasks.crawl[3b9b1e11-3a39-4ff4-83bb-b6df51ea2b9b] received
+[2025-02-23 14:03:51,170: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:03:51,176: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[3b9b1e11-3a39-4ff4-83bb-b6df51ea2b9b] succeeded in 0.005679875000168977s: None
+[2025-02-23 14:04:14,352: INFO/MainProcess] Task crawler.tasks.crawl[d8a12256-4336-47ef-8872-2cc26d35ca79] received
+[2025-02-23 14:04:14,353: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:04:14,355: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[d8a12256-4336-47ef-8872-2cc26d35ca79] succeeded in 0.002183733000038046s: None
+[2025-02-23 14:04:44,345: INFO/MainProcess] Task crawler.tasks.crawl[12da45d2-7716-42bc-be17-449ef0260d73] received
+[2025-02-23 14:04:44,346: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:04:44,348: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[12da45d2-7716-42bc-be17-449ef0260d73] succeeded in 0.0024277739998979087s: None
+[2025-02-23 14:05:14,345: INFO/MainProcess] Task crawler.tasks.crawl[c19a03d2-b60e-4461-be48-22d4d9251681] received
+[2025-02-23 14:05:14,345: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:05:14,347: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[c19a03d2-b60e-4461-be48-22d4d9251681] succeeded in 0.0018348429998695792s: None
+[2025-02-23 14:05:44,345: INFO/MainProcess] Task crawler.tasks.crawl[7c3eb60a-fa08-47da-be8d-efc504f56075] received
+[2025-02-23 14:05:44,347: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:05:44,350: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[7c3eb60a-fa08-47da-be8d-efc504f56075] succeeded in 0.0036561749998327286s: None
+[2025-02-23 14:06:14,345: INFO/MainProcess] Task crawler.tasks.crawl[9a7dc747-d62f-42e5-8b98-21a64edbc521] received
+[2025-02-23 14:06:14,346: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:06:14,349: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[9a7dc747-d62f-42e5-8b98-21a64edbc521] succeeded in 0.002899202999742556s: None
+[2025-02-23 14:06:44,344: INFO/MainProcess] Task crawler.tasks.crawl[a73d9ce0-1048-4faa-9f64-472e1e59f1cb] received
+[2025-02-23 14:06:44,383: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:06:44,386: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[a73d9ce0-1048-4faa-9f64-472e1e59f1cb] succeeded in 0.003573650999896927s: None
+[2025-02-23 14:07:14,345: INFO/MainProcess] Task crawler.tasks.crawl[72895d46-b35d-4401-84ee-30f8713ed3fc] received
+[2025-02-23 14:07:14,346: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:07:14,349: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[72895d46-b35d-4401-84ee-30f8713ed3fc] succeeded in 0.0025899369998114707s: None
+[2025-02-23 14:07:44,344: INFO/MainProcess] Task crawler.tasks.crawl[3aeee158-1cc7-4367-b421-a95112c84954] received
+[2025-02-23 14:07:44,345: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:07:44,347: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[3aeee158-1cc7-4367-b421-a95112c84954] succeeded in 0.0025905939996846428s: None
+[2025-02-23 14:08:14,344: INFO/MainProcess] Task crawler.tasks.crawl[046991d6-4922-4ce6-aeb4-9a4a29b6eab5] received
+[2025-02-23 14:08:14,345: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:08:14,347: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[046991d6-4922-4ce6-aeb4-9a4a29b6eab5] succeeded in 0.0021747290002167574s: None
+[2025-02-23 14:08:44,344: INFO/MainProcess] Task crawler.tasks.crawl[a3bb0269-acb4-442b-bb16-f4f0371252f1] received
+[2025-02-23 14:08:44,345: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:08:44,348: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[a3bb0269-acb4-442b-bb16-f4f0371252f1] succeeded in 0.002894644999742013s: None
+[2025-02-23 14:09:14,344: INFO/MainProcess] Task crawler.tasks.crawl[68a74775-0b08-47e6-9699-07d401ff267e] received
+[2025-02-23 14:09:14,344: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:09:14,346: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[68a74775-0b08-47e6-9699-07d401ff267e] succeeded in 0.0019638750000012806s: None
+[2025-02-23 14:09:44,345: INFO/MainProcess] Task crawler.tasks.crawl[93bddd4f-fd34-489f-8d69-15a533a036a8] received
+[2025-02-23 14:09:44,345: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:09:44,347: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[93bddd4f-fd34-489f-8d69-15a533a036a8] succeeded in 0.0014642050000475137s: None
+[2025-02-23 14:10:14,344: INFO/MainProcess] Task crawler.tasks.crawl[4ade70c1-6134-4c22-a357-6e6f392a2e36] received
+[2025-02-23 14:10:14,345: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:10:14,347: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[4ade70c1-6134-4c22-a357-6e6f392a2e36] succeeded in 0.0020188500002404908s: None
+[2025-02-23 14:10:44,344: INFO/MainProcess] Task crawler.tasks.crawl[fbfe97c2-4fe6-4b5f-9cf6-28e78ff3ef1f] received
+[2025-02-23 14:10:44,345: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:10:44,348: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[fbfe97c2-4fe6-4b5f-9cf6-28e78ff3ef1f] succeeded in 0.0026751519999379525s: None
+[2025-02-23 14:11:14,345: INFO/MainProcess] Task crawler.tasks.crawl[0bf85fdd-8a2f-407b-a96e-8431e1e34d2d] received
+[2025-02-23 14:11:14,346: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:11:14,348: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[0bf85fdd-8a2f-407b-a96e-8431e1e34d2d] succeeded in 0.0023294930001611647s: None
+[2025-02-23 14:11:44,345: INFO/MainProcess] Task crawler.tasks.crawl[fa07a0c3-64e5-47e2-920b-e4b27bc1b649] received
+[2025-02-23 14:11:44,346: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:11:44,348: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[fa07a0c3-64e5-47e2-920b-e4b27bc1b649] succeeded in 0.0026647910003703146s: None
+[2025-02-23 14:12:14,345: INFO/MainProcess] Task crawler.tasks.crawl[bc63e595-d4fa-43c1-879b-29f1b30d9541] received
+[2025-02-23 14:12:14,346: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:12:14,348: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[bc63e595-d4fa-43c1-879b-29f1b30d9541] succeeded in 0.002457506000155263s: None
+[2025-02-23 14:12:44,345: INFO/MainProcess] Task crawler.tasks.crawl[fad3651b-a6e2-464d-b474-46ad694acca1] received
+[2025-02-23 14:12:44,346: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:12:44,348: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[fad3651b-a6e2-464d-b474-46ad694acca1] succeeded in 0.002308369000274979s: None
+[2025-02-23 14:13:12,756: INFO/MainProcess] Task crawler.tasks.crawl[a82cf931-2aa2-4ed7-943a-9f159b543164] received
+[2025-02-23 14:13:12,757: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:13:12,759: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[a82cf931-2aa2-4ed7-943a-9f159b543164] succeeded in 0.0017987729997912538s: None
+[2025-02-23 14:13:14,345: INFO/MainProcess] Task crawler.tasks.crawl[7b1d3e0f-6d3e-4a48-b473-7d0bce40a014] received
+[2025-02-23 14:13:14,346: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:13:14,348: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[7b1d3e0f-6d3e-4a48-b473-7d0bce40a014] succeeded in 0.0024283150000883325s: None
+[2025-02-23 14:13:44,344: INFO/MainProcess] Task crawler.tasks.crawl[d7c495ea-c52b-4622-9616-d00a255e582c] received
+[2025-02-23 14:13:44,345: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:13:44,346: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[d7c495ea-c52b-4622-9616-d00a255e582c] succeeded in 0.0013458779999382386s: None
+[2025-02-23 14:14:14,344: INFO/MainProcess] Task crawler.tasks.crawl[5dcbe92f-bc30-4ce6-8ec2-d191aa7cc4d5] received
+[2025-02-23 14:14:14,345: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:14:14,346: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[5dcbe92f-bc30-4ce6-8ec2-d191aa7cc4d5] succeeded in 0.0018150659998354968s: None
+[2025-02-23 14:14:44,345: INFO/MainProcess] Task crawler.tasks.crawl[219d94a2-087d-4200-8aa9-948dc0f3a182] received
+[2025-02-23 14:14:44,346: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:14:44,349: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[219d94a2-087d-4200-8aa9-948dc0f3a182] succeeded in 0.0032504190003237454s: None
+[2025-02-23 14:15:14,345: INFO/MainProcess] Task crawler.tasks.crawl[67eba330-4254-49ac-9f6c-28be83d368ff] received
+[2025-02-23 14:15:14,346: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:15:14,349: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[67eba330-4254-49ac-9f6c-28be83d368ff] succeeded in 0.0031304730000556447s: None
+[2025-02-23 14:15:44,345: INFO/MainProcess] Task crawler.tasks.crawl[8b2e411f-4342-4f47-8da1-66bd1633ce2d] received
+[2025-02-23 14:15:44,346: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:15:44,349: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[8b2e411f-4342-4f47-8da1-66bd1633ce2d] succeeded in 0.0027759770000557182s: None
+[2025-02-23 14:16:14,344: INFO/MainProcess] Task crawler.tasks.crawl[78582a6a-9851-44f7-a37e-fe8779d62954] received
+[2025-02-23 14:16:14,345: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:16:14,347: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[78582a6a-9851-44f7-a37e-fe8779d62954] succeeded in 0.001834398000028159s: None
+[2025-02-23 14:16:44,346: INFO/MainProcess] Task crawler.tasks.crawl[c19f2c8f-6f32-423d-9047-c5e87936ab06] received
+[2025-02-23 14:16:44,346: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:16:44,349: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[c19f2c8f-6f32-423d-9047-c5e87936ab06] succeeded in 0.0027034630002162885s: None
+[2025-02-23 14:17:14,345: INFO/MainProcess] Task crawler.tasks.crawl[6af8db76-ee2c-473b-85ca-97bb1d097493] received
+[2025-02-23 14:17:14,346: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:17:14,349: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[6af8db76-ee2c-473b-85ca-97bb1d097493] succeeded in 0.002553383999838843s: None
+[2025-02-23 14:17:44,345: INFO/MainProcess] Task crawler.tasks.crawl[fc10095e-ad32-41b5-b326-eab0ddca9ec0] received
+[2025-02-23 14:17:44,346: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:17:44,349: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[fc10095e-ad32-41b5-b326-eab0ddca9ec0] succeeded in 0.003075342000101955s: None
+[2025-02-23 14:18:14,346: INFO/MainProcess] Task crawler.tasks.crawl[fccca331-fcdd-4e1a-9815-4ae7604d875f] received
+[2025-02-23 14:18:14,347: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:18:14,350: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[fccca331-fcdd-4e1a-9815-4ae7604d875f] succeeded in 0.003444782999849849s: None
+[2025-02-23 14:18:44,345: INFO/MainProcess] Task crawler.tasks.crawl[bb753a9e-ac56-4a42-b445-b24536cc1500] received
+[2025-02-23 14:18:44,346: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:18:44,348: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[bb753a9e-ac56-4a42-b445-b24536cc1500] succeeded in 0.0024002340001061384s: None
+[2025-02-23 14:19:14,345: INFO/MainProcess] Task crawler.tasks.crawl[6725fdf0-1404-471a-848e-fe3519698e34] received
+[2025-02-23 14:19:14,346: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:19:14,349: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[6725fdf0-1404-471a-848e-fe3519698e34] succeeded in 0.002486564999799157s: None
+[2025-02-23 14:19:44,344: INFO/MainProcess] Task crawler.tasks.crawl[9392c2ce-63ef-4cb8-8bd3-96fc412d606b] received
+[2025-02-23 14:19:44,383: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:19:44,387: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[9392c2ce-63ef-4cb8-8bd3-96fc412d606b] succeeded in 0.003987720000168338s: None
+[2025-02-23 14:20:14,345: INFO/MainProcess] Task crawler.tasks.crawl[a3a14bdf-0e38-4564-886b-2ada06296318] received
+[2025-02-23 14:20:14,346: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:20:14,349: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[a3a14bdf-0e38-4564-886b-2ada06296318] succeeded in 0.0027193169999009115s: None
+[2025-02-23 14:20:44,344: INFO/MainProcess] Task crawler.tasks.crawl[2ce8b7e0-e5a8-4501-a75e-e149ec18096a] received
+[2025-02-23 14:20:44,345: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:20:44,347: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[2ce8b7e0-e5a8-4501-a75e-e149ec18096a] succeeded in 0.0024485129997628974s: None
+[2025-02-23 14:21:14,345: INFO/MainProcess] Task crawler.tasks.crawl[9ea38e2f-f6bb-489c-a19d-f9e2485a2826] received
+[2025-02-23 14:21:14,345: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:21:14,347: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[9ea38e2f-f6bb-489c-a19d-f9e2485a2826] succeeded in 0.002130084999862447s: None
+[2025-02-23 14:21:44,346: INFO/MainProcess] Task crawler.tasks.crawl[c9f7e76c-a6cc-4f82-86f0-751c3ef5e769] received
+[2025-02-23 14:21:44,346: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:21:44,349: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[c9f7e76c-a6cc-4f82-86f0-751c3ef5e769] succeeded in 0.0030186809999577235s: None
+[2025-02-23 14:22:14,345: INFO/MainProcess] Task crawler.tasks.crawl[50191a62-0ff4-4035-8c59-630d8d243ddd] received
+[2025-02-23 14:22:14,346: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:22:14,348: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[50191a62-0ff4-4035-8c59-630d8d243ddd] succeeded in 0.0021787160003441386s: None
+[2025-02-23 14:22:44,345: INFO/MainProcess] Task crawler.tasks.crawl[371c77ba-05b3-4af8-923b-69fc2b21b943] received
+[2025-02-23 14:22:44,346: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:22:44,349: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[371c77ba-05b3-4af8-923b-69fc2b21b943] succeeded in 0.002368517999912001s: None
+[2025-02-23 14:23:14,345: INFO/MainProcess] Task crawler.tasks.crawl[95601a21-d1c5-4f11-9853-be9be6526de3] received
+[2025-02-23 14:23:14,345: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:23:14,347: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[95601a21-d1c5-4f11-9853-be9be6526de3] succeeded in 0.0021999390000928543s: None
+[2025-02-23 14:23:44,346: INFO/MainProcess] Task crawler.tasks.crawl[058b2650-e015-43c8-8000-bd1b6cee8f0d] received
+[2025-02-23 14:23:44,347: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:23:44,349: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[058b2650-e015-43c8-8000-bd1b6cee8f0d] succeeded in 0.0022483910001938057s: None
+[2025-02-23 14:24:14,346: INFO/MainProcess] Task crawler.tasks.crawl[3e36b4fa-82a6-46b0-8be9-1295eae27a7f] received
+[2025-02-23 14:24:14,347: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:24:14,349: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[3e36b4fa-82a6-46b0-8be9-1295eae27a7f] succeeded in 0.002510537000034674s: None
+[2025-02-23 14:24:44,345: INFO/MainProcess] Task crawler.tasks.crawl[f4efa744-fb00-4b7c-84fc-04e62d9026cf] received
+[2025-02-23 14:24:44,346: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:24:44,348: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[f4efa744-fb00-4b7c-84fc-04e62d9026cf] succeeded in 0.00208689900000536s: None
+[2025-02-23 14:25:14,346: INFO/MainProcess] Task crawler.tasks.crawl[9112e3c3-22b2-4616-a77d-64552036c779] received
+[2025-02-23 14:25:14,347: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:25:14,350: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[9112e3c3-22b2-4616-a77d-64552036c779] succeeded in 0.003126769999653334s: None
+[2025-02-23 14:25:44,345: INFO/MainProcess] Task crawler.tasks.crawl[75d0be74-a4a1-414f-8ce9-b70d41b37170] received
+[2025-02-23 14:25:44,345: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:25:44,347: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[75d0be74-a4a1-414f-8ce9-b70d41b37170] succeeded in 0.001664500000060798s: None
+[2025-02-23 14:26:14,345: INFO/MainProcess] Task crawler.tasks.crawl[bfee3619-291b-4732-b992-e0b7d517632e] received
+[2025-02-23 14:26:14,346: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:26:14,347: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[bfee3619-291b-4732-b992-e0b7d517632e] succeeded in 0.0013749479999205505s: None
+[2025-02-23 14:26:44,345: INFO/MainProcess] Task crawler.tasks.crawl[c1210640-5486-4c55-bce1-eceecf9b55b0] received
+[2025-02-23 14:26:44,346: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:26:44,347: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[c1210640-5486-4c55-bce1-eceecf9b55b0] succeeded in 0.0014178060000631376s: None
+[2025-02-23 14:27:14,346: INFO/MainProcess] Task crawler.tasks.crawl[fc25f3e6-a949-42de-a66a-8a06726afbc5] received
+[2025-02-23 14:27:14,347: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:27:14,350: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[fc25f3e6-a949-42de-a66a-8a06726afbc5] succeeded in 0.0030440999998972984s: None
+[2025-02-23 14:27:44,345: INFO/MainProcess] Task crawler.tasks.crawl[04dd6bcc-05a7-49a6-bd7d-607dc606f83b] received
+[2025-02-23 14:27:44,346: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:27:44,348: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[04dd6bcc-05a7-49a6-bd7d-607dc606f83b] succeeded in 0.002232694999747764s: None
+[2025-02-23 14:28:14,345: INFO/MainProcess] Task crawler.tasks.crawl[78fbaaa5-76a6-4540-8e97-639db3ab29dc] received
+[2025-02-23 14:28:14,346: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:28:14,347: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[78fbaaa5-76a6-4540-8e97-639db3ab29dc] succeeded in 0.0012859189996561327s: None
+[2025-02-23 14:28:44,345: INFO/MainProcess] Task crawler.tasks.crawl[0e9cfcb1-f8cc-4477-a606-02f69afac068] received
+[2025-02-23 14:28:44,346: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:28:44,348: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[0e9cfcb1-f8cc-4477-a606-02f69afac068] succeeded in 0.0027712520000022778s: None
+[2025-02-23 14:29:14,345: INFO/MainProcess] Task crawler.tasks.crawl[e0f5ec44-5966-4f03-8b65-791505e6f1d0] received
+[2025-02-23 14:29:14,346: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:29:14,348: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[e0f5ec44-5966-4f03-8b65-791505e6f1d0] succeeded in 0.0020958459999746992s: None
+[2025-02-23 14:29:44,346: INFO/MainProcess] Task crawler.tasks.crawl[b624b8ec-e8c1-45de-b91d-30955c1c656b] received
+[2025-02-23 14:29:44,347: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:29:44,349: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[b624b8ec-e8c1-45de-b91d-30955c1c656b] succeeded in 0.002582072000222979s: None
+[2025-02-23 14:30:14,346: INFO/MainProcess] Task crawler.tasks.crawl[892beab6-b02f-4b37-957a-c09bfa6042cf] received
+[2025-02-23 14:30:14,347: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:30:14,350: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[892beab6-b02f-4b37-957a-c09bfa6042cf] succeeded in 0.0027734509999390866s: None
+[2025-02-23 14:30:44,346: INFO/MainProcess] Task crawler.tasks.crawl[bd8a4599-c857-4c75-8c16-2eb110a6af72] received
+[2025-02-23 14:30:44,347: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:30:44,350: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[bd8a4599-c857-4c75-8c16-2eb110a6af72] succeeded in 0.0028317859996604966s: None
+[2025-02-23 14:31:14,346: INFO/MainProcess] Task crawler.tasks.crawl[8b67552a-3f10-4ffb-85c5-c3dbdb8fd6b2] received
+[2025-02-23 14:31:14,346: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:31:14,348: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[8b67552a-3f10-4ffb-85c5-c3dbdb8fd6b2] succeeded in 0.002204351999807841s: None
+[2025-02-23 14:31:44,347: INFO/MainProcess] Task crawler.tasks.crawl[0de8af09-dc63-4c44-8da6-cfa5e64d4a59] received
+[2025-02-23 14:31:44,348: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:31:44,352: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[0de8af09-dc63-4c44-8da6-cfa5e64d4a59] succeeded in 0.003807344000051671s: None
+[2025-02-23 14:32:14,345: INFO/MainProcess] Task crawler.tasks.crawl[8dff103f-ce21-4f00-9e3f-cf18a250d909] received
+[2025-02-23 14:32:14,346: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:32:14,347: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[8dff103f-ce21-4f00-9e3f-cf18a250d909] succeeded in 0.0012820930000998487s: None
+[2025-02-23 14:32:44,345: INFO/MainProcess] Task crawler.tasks.crawl[af16541e-c650-47bc-8029-4722e7c22c7e] received
+[2025-02-23 14:32:44,346: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:32:44,348: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[af16541e-c650-47bc-8029-4722e7c22c7e] succeeded in 0.0019214479998481693s: None
+[2025-02-23 14:33:14,345: INFO/MainProcess] Task crawler.tasks.crawl[d0650639-794c-4413-a456-e8a3bef6ae63] received
+[2025-02-23 14:33:14,346: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:33:14,347: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[d0650639-794c-4413-a456-e8a3bef6ae63] succeeded in 0.0012575000000651926s: None
+[2025-02-23 14:33:34,429: INFO/MainProcess] Task crawler.tasks.crawl[55fa5965-c7f0-48ec-9809-fac5f601b7c8] received
+[2025-02-23 14:33:34,430: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:33:34,433: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[55fa5965-c7f0-48ec-9809-fac5f601b7c8] succeeded in 0.0028780980001101852s: None
+[2025-02-23 14:33:44,347: INFO/MainProcess] Task crawler.tasks.crawl[866b2ecc-c35d-493f-9470-8114666d38fa] received
+[2025-02-23 14:33:44,347: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:33:44,350: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[866b2ecc-c35d-493f-9470-8114666d38fa] succeeded in 0.002844081000148435s: None
+[2025-02-23 14:34:04,419: INFO/MainProcess] Task crawler.tasks.crawl[8d4287b9-5e30-457c-a32c-83b0b88fb3ee] received
+[2025-02-23 14:34:04,419: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:34:04,421: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[8d4287b9-5e30-457c-a32c-83b0b88fb3ee] succeeded in 0.0018786149998959445s: None
+[2025-02-23 14:34:14,345: INFO/MainProcess] Task crawler.tasks.crawl[a44596a0-7654-48fa-8847-a146fd291eed] received
+[2025-02-23 14:34:14,346: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:34:14,347: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[a44596a0-7654-48fa-8847-a146fd291eed] succeeded in 0.0013446950001707592s: None
+[2025-02-23 14:34:34,425: INFO/MainProcess] Task crawler.tasks.crawl[7df0b81f-0f86-40dd-b99e-a9ca8f6ed8c6] received
+[2025-02-23 14:34:34,426: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:34:34,428: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[7df0b81f-0f86-40dd-b99e-a9ca8f6ed8c6] succeeded in 0.002374442000018462s: None
+[2025-02-23 14:34:44,346: INFO/MainProcess] Task crawler.tasks.crawl[53e0272a-d63f-4f39-9c86-4596d56f6d06] received
+[2025-02-23 14:34:44,347: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:34:44,349: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[53e0272a-d63f-4f39-9c86-4596d56f6d06] succeeded in 0.002696302000003925s: None
+[2025-02-23 14:35:44,346: INFO/MainProcess] Task crawler.tasks.crawl[8f07ea3c-e60e-4d79-b009-f98deaa8f5f0] received
+[2025-02-23 14:35:44,347: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:35:44,349: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[8f07ea3c-e60e-4d79-b009-f98deaa8f5f0] succeeded in 0.0023591799999849172s: None
+[2025-02-23 14:36:14,347: INFO/MainProcess] Task crawler.tasks.crawl[6582ef20-c93c-4bc8-aa2e-758646d066ea] received
+[2025-02-23 14:36:14,349: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:36:14,352: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[6582ef20-c93c-4bc8-aa2e-758646d066ea] succeeded in 0.003728741999111662s: None
+[2025-02-23 14:36:44,347: INFO/MainProcess] Task crawler.tasks.crawl[bc3be1a1-8c8e-4f55-94d0-ecbd48866040] received
+[2025-02-23 14:36:44,348: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:36:44,351: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[bc3be1a1-8c8e-4f55-94d0-ecbd48866040] succeeded in 0.0034297340007469757s: None
+[2025-02-23 14:37:14,346: INFO/MainProcess] Task crawler.tasks.crawl[87ce8155-55c4-47e4-8ac6-3860e6f7cc2e] received
+[2025-02-23 14:37:14,347: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:37:14,350: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[87ce8155-55c4-47e4-8ac6-3860e6f7cc2e] succeeded in 0.0028241089994480717s: None
+[2025-02-23 14:37:44,347: INFO/MainProcess] Task crawler.tasks.crawl[f85154b2-8313-41da-bdef-4e0ef0bf022f] received
+[2025-02-23 14:37:44,348: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:37:44,351: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[f85154b2-8313-41da-bdef-4e0ef0bf022f] succeeded in 0.003751573999579705s: None
+[2025-02-23 14:38:14,346: INFO/MainProcess] Task crawler.tasks.crawl[52d0c5c9-25a9-4d23-a0f5-a0414e9bd548] received
+[2025-02-23 14:38:14,347: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:38:14,350: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[52d0c5c9-25a9-4d23-a0f5-a0414e9bd548] succeeded in 0.0026422420005474123s: None
+[2025-02-23 14:38:44,346: INFO/MainProcess] Task crawler.tasks.crawl[5c4e9a06-29e5-4624-bcfe-e6f4fdb7de3c] received
+[2025-02-23 14:38:44,347: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:38:44,349: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[5c4e9a06-29e5-4624-bcfe-e6f4fdb7de3c] succeeded in 0.002315365999493224s: None
+[2025-02-23 14:39:14,346: INFO/MainProcess] Task crawler.tasks.crawl[314ed373-b37b-4016-b754-2d6fb28f42f6] received
+[2025-02-23 14:39:14,347: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:39:14,349: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[314ed373-b37b-4016-b754-2d6fb28f42f6] succeeded in 0.0024665640003149747s: None
+[2025-02-23 14:39:44,346: INFO/MainProcess] Task crawler.tasks.crawl[4567a046-9a4c-48f3-99d6-b7ccd83017d6] received
+[2025-02-23 14:39:44,346: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:39:44,349: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[4567a046-9a4c-48f3-99d6-b7ccd83017d6] succeeded in 0.002440288999423501s: None
+[2025-02-23 14:40:14,346: INFO/MainProcess] Task crawler.tasks.crawl[ccea9981-fc55-4ba2-8f41-c16403582605] received
+[2025-02-23 14:40:14,346: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:40:14,348: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[ccea9981-fc55-4ba2-8f41-c16403582605] succeeded in 0.0022151819994178368s: None
+[2025-02-23 14:40:44,346: INFO/MainProcess] Task crawler.tasks.crawl[baf9252f-2588-456c-ac4f-1825bc688a31] received
+[2025-02-23 14:40:44,347: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:40:44,349: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[baf9252f-2588-456c-ac4f-1825bc688a31] succeeded in 0.002325288000065484s: None
+[2025-02-23 14:41:14,346: INFO/MainProcess] Task crawler.tasks.crawl[b01a0ff6-203b-402c-a407-8c85db0a1060] received
+[2025-02-23 14:41:14,347: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:41:14,349: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[b01a0ff6-203b-402c-a407-8c85db0a1060] succeeded in 0.002418371999738156s: None
+[2025-02-23 14:41:44,345: INFO/MainProcess] Task crawler.tasks.crawl[0ced3d31-cb84-4a8e-a125-5d2cb6104bee] received
+[2025-02-23 14:41:44,346: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:41:44,348: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[0ced3d31-cb84-4a8e-a125-5d2cb6104bee] succeeded in 0.0017543529993417906s: None
+[2025-02-23 14:42:14,346: INFO/MainProcess] Task crawler.tasks.crawl[48890258-826e-43ca-b3e2-fc2a561bb12f] received
+[2025-02-23 14:42:14,346: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:42:14,348: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[48890258-826e-43ca-b3e2-fc2a561bb12f] succeeded in 0.0020685999998022453s: None
+[2025-02-23 14:42:44,346: INFO/MainProcess] Task crawler.tasks.crawl[5bf856bd-e116-460f-bff9-ffeb8a61b4da] received
+[2025-02-23 14:42:44,347: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:42:44,350: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[5bf856bd-e116-460f-bff9-ffeb8a61b4da] succeeded in 0.002380394000283559s: None
+[2025-02-23 14:43:14,347: INFO/MainProcess] Task crawler.tasks.crawl[5a5680b1-3597-4fba-98b8-6c21f2cb4373] received
+[2025-02-23 14:43:14,348: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:43:14,350: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[5a5680b1-3597-4fba-98b8-6c21f2cb4373] succeeded in 0.0023633749997316045s: None
+[2025-02-23 14:43:44,347: INFO/MainProcess] Task crawler.tasks.crawl[0e73bb9e-8f84-4007-a6e0-1e0445ac5270] received
+[2025-02-23 14:43:44,348: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:43:44,350: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[0e73bb9e-8f84-4007-a6e0-1e0445ac5270] succeeded in 0.002333264999833773s: None
+[2025-02-23 14:44:14,346: INFO/MainProcess] Task crawler.tasks.crawl[f5c34890-ad42-48b5-8e02-c707378f1352] received
+[2025-02-23 14:44:14,347: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:44:14,349: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[f5c34890-ad42-48b5-8e02-c707378f1352] succeeded in 0.002463190000526083s: None
+[2025-02-23 14:44:44,346: INFO/MainProcess] Task crawler.tasks.crawl[75c24ac6-025d-49fb-af77-72e095df1b05] received
+[2025-02-23 14:44:44,346: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:44:44,348: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[75c24ac6-025d-49fb-af77-72e095df1b05] succeeded in 0.001859935000538826s: None
+[2025-02-23 14:45:14,346: INFO/MainProcess] Task crawler.tasks.crawl[3dcf948f-86b5-45fd-ba1e-673633ae8c28] received
+[2025-02-23 14:45:14,347: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:45:14,349: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[3dcf948f-86b5-45fd-ba1e-673633ae8c28] succeeded in 0.0021546039997701882s: None
+[2025-02-23 14:45:44,347: INFO/MainProcess] Task crawler.tasks.crawl[2ca12ec8-0952-49c5-b37d-80cc22eb7388] received
+[2025-02-23 14:45:44,348: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:45:44,350: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[2ca12ec8-0952-49c5-b37d-80cc22eb7388] succeeded in 0.002230638000582985s: None
+[2025-02-23 14:46:14,346: INFO/MainProcess] Task crawler.tasks.crawl[c0b6d24e-1655-4ac1-86dc-71d7ae6d5ab4] received
+[2025-02-23 14:46:14,346: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:46:14,348: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[c0b6d24e-1655-4ac1-86dc-71d7ae6d5ab4] succeeded in 0.0013676320004378795s: None
+[2025-02-23 14:46:44,347: INFO/MainProcess] Task crawler.tasks.crawl[7e139028-85fb-4d84-aa5e-d0ab1a85ee9c] received
+[2025-02-23 14:46:44,348: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:46:44,350: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[7e139028-85fb-4d84-aa5e-d0ab1a85ee9c] succeeded in 0.0023955729993758723s: None
+[2025-02-23 14:47:14,347: INFO/MainProcess] Task crawler.tasks.crawl[b83e13b2-6b31-441f-b53a-991c0cc4c4b4] received
+[2025-02-23 14:47:14,347: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:47:14,350: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[b83e13b2-6b31-441f-b53a-991c0cc4c4b4] succeeded in 0.002286487000674242s: None
+[2025-02-23 14:47:44,347: INFO/MainProcess] Task crawler.tasks.crawl[861c4803-3005-42a8-815e-a323b08d2b2b] received
+[2025-02-23 14:47:44,348: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:47:44,351: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[861c4803-3005-42a8-815e-a323b08d2b2b] succeeded in 0.0029203340000094613s: None
+[2025-02-23 14:48:14,347: INFO/MainProcess] Task crawler.tasks.crawl[5654ea02-8bd8-4746-9b79-5a3ddede1e5d] received
+[2025-02-23 14:48:14,348: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:48:14,350: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[5654ea02-8bd8-4746-9b79-5a3ddede1e5d] succeeded in 0.002347992999602866s: None
+[2025-02-23 14:48:44,346: INFO/MainProcess] Task crawler.tasks.crawl[b45dc84d-4982-4464-9233-a0d3f1d46118] received
+[2025-02-23 14:48:44,346: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:48:44,348: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[b45dc84d-4982-4464-9233-a0d3f1d46118] succeeded in 0.0020991040000808425s: None
+[2025-02-23 14:49:14,346: INFO/MainProcess] Task crawler.tasks.crawl[1f59ef1b-950f-43f9-a3b7-b96bc530101c] received
+[2025-02-23 14:49:14,346: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:49:14,348: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[1f59ef1b-950f-43f9-a3b7-b96bc530101c] succeeded in 0.0020265230004952173s: None
+[2025-02-23 14:49:44,347: INFO/MainProcess] Task crawler.tasks.crawl[2075eaf1-bd1e-4ba2-957c-9eb64b7c5b36] received
+[2025-02-23 14:49:44,348: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:49:44,350: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[2075eaf1-bd1e-4ba2-957c-9eb64b7c5b36] succeeded in 0.0023033739998936653s: None
+[2025-02-23 14:50:14,347: INFO/MainProcess] Task crawler.tasks.crawl[9e8fed19-2513-414f-8ff9-6de0a3197195] received
+[2025-02-23 14:50:14,348: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:50:14,350: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[9e8fed19-2513-414f-8ff9-6de0a3197195] succeeded in 0.002544768000007025s: None
+[2025-02-23 14:50:44,347: INFO/MainProcess] Task crawler.tasks.crawl[6e4747e5-22ac-4aa5-ba56-fd969e5990ca] received
+[2025-02-23 14:50:44,348: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:50:44,350: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[6e4747e5-22ac-4aa5-ba56-fd969e5990ca] succeeded in 0.002348027000152797s: None
+[2025-02-23 14:51:14,346: INFO/MainProcess] Task crawler.tasks.crawl[40bf0c73-21cc-4222-85f5-6765836312a9] received
+[2025-02-23 14:51:14,346: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:51:14,348: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[40bf0c73-21cc-4222-85f5-6765836312a9] succeeded in 0.0020416890001797583s: None
+[2025-02-23 14:51:44,347: INFO/MainProcess] Task crawler.tasks.crawl[59c32ad0-2e05-494f-afd0-49fa2d5d425f] received
+[2025-02-23 14:51:44,348: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:51:44,351: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[59c32ad0-2e05-494f-afd0-49fa2d5d425f] succeeded in 0.0024381780003750464s: None
+[2025-02-23 14:52:14,347: INFO/MainProcess] Task crawler.tasks.crawl[26efbbd3-b347-4816-af6d-3286700cd86b] received
+[2025-02-23 14:52:14,348: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:52:14,351: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[26efbbd3-b347-4816-af6d-3286700cd86b] succeeded in 0.0030294359994513798s: None
+[2025-02-23 14:52:44,347: INFO/MainProcess] Task crawler.tasks.crawl[3534d482-11fe-45b0-a79b-7f0569bb03fb] received
+[2025-02-23 14:52:44,348: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:52:44,350: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[3534d482-11fe-45b0-a79b-7f0569bb03fb] succeeded in 0.0023600210006406996s: None
+[2025-02-23 14:53:14,347: INFO/MainProcess] Task crawler.tasks.crawl[68e50771-f870-46e9-87ff-e27cbd991bec] received
+[2025-02-23 14:53:14,348: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:53:14,350: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[68e50771-f870-46e9-87ff-e27cbd991bec] succeeded in 0.0022523469997395296s: None
+[2025-02-23 14:53:44,346: INFO/MainProcess] Task crawler.tasks.crawl[00878ce3-5bb2-49bf-9d16-98510da1bbf6] received
+[2025-02-23 14:53:44,347: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:53:44,348: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[00878ce3-5bb2-49bf-9d16-98510da1bbf6] succeeded in 0.0017820279999796185s: None
+[2025-02-23 14:54:14,347: INFO/MainProcess] Task crawler.tasks.crawl[a84de7ad-0264-46b9-ab85-600387e9f04a] received
+[2025-02-23 14:54:14,348: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:54:14,351: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[a84de7ad-0264-46b9-ab85-600387e9f04a] succeeded in 0.0025648929995440994s: None
+[2025-02-23 14:54:44,347: INFO/MainProcess] Task crawler.tasks.crawl[5fba2d0e-7fa9-46a9-9eeb-32a52963ef7a] received
+[2025-02-23 14:54:44,348: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:54:44,350: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[5fba2d0e-7fa9-46a9-9eeb-32a52963ef7a] succeeded in 0.0022501559997181175s: None
+[2025-02-23 14:58:01,626: INFO/MainProcess] Task crawler.tasks.crawl[0085a8dd-9388-4d8b-a90f-ca482b4e6671] received
+[2025-02-23 14:58:01,630: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:58:01,644: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[0085a8dd-9388-4d8b-a90f-ca482b4e6671] succeeded in 0.014309348000097089s: None
+[2025-02-23 14:58:31,618: INFO/MainProcess] Task crawler.tasks.crawl[a2d273f7-6ce0-4867-b532-9ce26f54d7a5] received
+[2025-02-23 14:58:31,619: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:58:31,622: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[a2d273f7-6ce0-4867-b532-9ce26f54d7a5] succeeded in 0.0026306859999749577s: None
+[2025-02-23 14:59:01,618: INFO/MainProcess] Task crawler.tasks.crawl[d1c5d058-239d-46ea-97d3-aaf12dc50bac] received
+[2025-02-23 14:59:01,619: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:59:01,622: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[d1c5d058-239d-46ea-97d3-aaf12dc50bac] succeeded in 0.0027763050002249656s: None
+[2025-02-23 14:59:31,618: INFO/MainProcess] Task crawler.tasks.crawl[9f520429-c307-44cf-8b03-3bba9db84f43] received
+[2025-02-23 14:59:31,620: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 14:59:31,623: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[9f520429-c307-44cf-8b03-3bba9db84f43] succeeded in 0.003656684999441495s: None
+[2025-02-23 15:00:01,618: INFO/MainProcess] Task crawler.tasks.crawl[f1fd412e-76a6-49fc-a34d-15625c0a93c8] received
+[2025-02-23 15:00:01,619: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 15:00:01,623: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[f1fd412e-76a6-49fc-a34d-15625c0a93c8] succeeded in 0.004200516000310017s: None
+[2025-02-23 15:00:31,619: INFO/MainProcess] Task crawler.tasks.crawl[42038421-37b6-4af8-84f9-c8757a3c1947] received
+[2025-02-23 15:00:31,621: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 15:00:31,625: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[42038421-37b6-4af8-84f9-c8757a3c1947] succeeded in 0.00454050799999095s: None
+[2025-02-23 15:01:01,618: INFO/MainProcess] Task crawler.tasks.crawl[e699d4bc-8ea3-46ee-805b-beaea33b0880] received
+[2025-02-23 15:01:01,619: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 15:01:01,622: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[e699d4bc-8ea3-46ee-805b-beaea33b0880] succeeded in 0.002941956000540813s: None
+[2025-02-23 15:01:31,618: INFO/MainProcess] Task crawler.tasks.crawl[a00d8cd9-cff6-4228-8985-f6c1513b563b] received
+[2025-02-23 15:01:31,619: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 15:01:31,622: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[a00d8cd9-cff6-4228-8985-f6c1513b563b] succeeded in 0.002952949000246008s: None
+[2025-02-23 15:02:01,618: INFO/MainProcess] Task crawler.tasks.crawl[48d7eddd-497f-4123-b45a-5bd767904e36] received
+[2025-02-23 15:02:01,619: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 15:02:01,623: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[48d7eddd-497f-4123-b45a-5bd767904e36] succeeded in 0.0034908649995486485s: None
+[2025-02-23 15:02:31,618: INFO/MainProcess] Task crawler.tasks.crawl[7ba69a6e-86d3-4608-a817-924782d6a79c] received
+[2025-02-23 15:02:31,619: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 15:02:31,622: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[7ba69a6e-86d3-4608-a817-924782d6a79c] succeeded in 0.002847144000043045s: None
+[2025-02-23 15:03:01,619: INFO/MainProcess] Task crawler.tasks.crawl[d204d03a-52f2-4253-9a02-58b850a1efa1] received
+[2025-02-23 15:03:01,620: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 15:03:01,622: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[d204d03a-52f2-4253-9a02-58b850a1efa1] succeeded in 0.00292282400005206s: None
+[2025-02-23 15:03:31,618: INFO/MainProcess] Task crawler.tasks.crawl[421caa2c-c725-4d6b-a660-967e8d8344e0] received
+[2025-02-23 15:03:31,619: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 15:03:31,622: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[421caa2c-c725-4d6b-a660-967e8d8344e0] succeeded in 0.0031002550003904616s: None
+[2025-02-23 15:04:01,618: INFO/MainProcess] Task crawler.tasks.crawl[924243b6-bc64-4989-8855-a899636da078] received
+[2025-02-23 15:04:01,619: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 15:04:01,622: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[924243b6-bc64-4989-8855-a899636da078] succeeded in 0.0026823789994523395s: None
+[2025-02-23 15:04:31,619: INFO/MainProcess] Task crawler.tasks.crawl[d4b34e2a-c395-43f3-b74c-6a8eff0d7487] received
+[2025-02-23 15:04:31,619: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 15:04:31,622: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[d4b34e2a-c395-43f3-b74c-6a8eff0d7487] succeeded in 0.002926576999925601s: None
+[2025-02-23 15:05:01,618: INFO/MainProcess] Task crawler.tasks.crawl[c7edf435-7a04-4d8f-99d9-445201484841] received
+[2025-02-23 15:05:01,618: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 15:05:01,620: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[c7edf435-7a04-4d8f-99d9-445201484841] succeeded in 0.0014997860007497366s: None
+[2025-02-23 15:05:31,619: INFO/MainProcess] Task crawler.tasks.crawl[a2589cf0-fbac-4e82-a803-08ddab0b366f] received
+[2025-02-23 15:05:31,619: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 15:05:31,622: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[a2589cf0-fbac-4e82-a803-08ddab0b366f] succeeded in 0.0026351180003985064s: None
+[2025-02-23 15:06:01,618: INFO/MainProcess] Task crawler.tasks.crawl[7562b731-b217-41a6-92f2-e855923ab017] received
+[2025-02-23 15:06:01,619: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 15:06:01,621: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[7562b731-b217-41a6-92f2-e855923ab017] succeeded in 0.002492829999937385s: None
+[2025-02-23 15:06:31,619: INFO/MainProcess] Task crawler.tasks.crawl[048b2d4a-0bb2-4196-a4ce-08c58e6d2751] received
+[2025-02-23 15:06:31,620: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 15:06:31,622: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[048b2d4a-0bb2-4196-a4ce-08c58e6d2751] succeeded in 0.0029011189999437192s: None
+[2025-02-23 15:07:01,618: INFO/MainProcess] Task crawler.tasks.crawl[496474b2-afe7-46e3-a799-8e3f58483e37] received
+[2025-02-23 15:07:01,618: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 15:07:01,620: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[496474b2-afe7-46e3-a799-8e3f58483e37] succeeded in 0.001971595999748388s: None
+[2025-02-23 15:07:31,619: INFO/MainProcess] Task crawler.tasks.crawl[5c088aa8-4c4a-4d81-b5fe-9a0d92b7a3c7] received
+[2025-02-23 15:07:31,620: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 15:07:31,622: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[5c088aa8-4c4a-4d81-b5fe-9a0d92b7a3c7] succeeded in 0.002636705999975675s: None
+[2025-02-23 15:08:01,618: INFO/MainProcess] Task crawler.tasks.crawl[b00324f9-51e3-43ba-a4c7-cf62707ab4ad] received
+[2025-02-23 15:08:01,619: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 15:08:01,622: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[b00324f9-51e3-43ba-a4c7-cf62707ab4ad] succeeded in 0.002676441000403429s: None
+[2025-02-23 15:08:31,619: INFO/MainProcess] Task crawler.tasks.crawl[8cab7a2a-c632-450f-9806-4e77f5b8ca90] received
+[2025-02-23 15:08:31,620: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 15:08:31,624: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[8cab7a2a-c632-450f-9806-4e77f5b8ca90] succeeded in 0.004749120000269613s: None
+[2025-02-23 15:09:01,619: INFO/MainProcess] Task crawler.tasks.crawl[c954ae6b-363a-45e9-97b2-06e766fd50ec] received
+[2025-02-23 15:09:01,621: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 15:09:01,625: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[c954ae6b-363a-45e9-97b2-06e766fd50ec] succeeded in 0.00400833900039288s: None
+[2025-02-23 15:09:31,619: INFO/MainProcess] Task crawler.tasks.crawl[67eaf4a0-afef-478a-a64c-3306ce341b4c] received
+[2025-02-23 15:09:31,620: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 15:09:31,623: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[67eaf4a0-afef-478a-a64c-3306ce341b4c] succeeded in 0.0030910140003470588s: None
+[2025-02-23 15:10:01,619: INFO/MainProcess] Task crawler.tasks.crawl[671132c2-a024-4a18-b45f-ccc61ff9ae1c] received
+[2025-02-23 15:10:01,620: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 15:10:01,622: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[671132c2-a024-4a18-b45f-ccc61ff9ae1c] succeeded in 0.0029803970001012203s: None
+[2025-02-23 15:10:31,618: INFO/MainProcess] Task crawler.tasks.crawl[66dd197d-58fc-4489-a943-435aa510f0b7] received
+[2025-02-23 15:10:31,619: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 15:10:31,621: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[66dd197d-58fc-4489-a943-435aa510f0b7] succeeded in 0.0025582739999663318s: None
+[2025-02-23 15:11:01,619: INFO/MainProcess] Task crawler.tasks.crawl[73bba0cc-f5a9-49b8-aff9-d2b029e1a02f] received
+[2025-02-23 15:11:01,620: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 15:11:01,622: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[73bba0cc-f5a9-49b8-aff9-d2b029e1a02f] succeeded in 0.0027148640001541935s: None
+[2025-02-23 15:11:31,619: INFO/MainProcess] Task crawler.tasks.crawl[9ba89994-1b1d-47d5-b814-bb4a52cbd1b5] received
+[2025-02-23 15:11:31,620: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 15:11:31,623: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[9ba89994-1b1d-47d5-b814-bb4a52cbd1b5] succeeded in 0.003011935999893467s: None
+[2025-02-23 15:12:01,619: INFO/MainProcess] Task crawler.tasks.crawl[6270160a-269a-4b71-8127-32e41f3b5485] received
+[2025-02-23 15:12:01,620: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 15:12:01,623: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[6270160a-269a-4b71-8127-32e41f3b5485] succeeded in 0.002528766000068572s: None
+[2025-02-23 15:12:31,619: INFO/MainProcess] Task crawler.tasks.crawl[283cf694-892d-4ff2-a33e-e600681be04f] received
+[2025-02-23 15:12:31,620: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 15:12:31,622: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[283cf694-892d-4ff2-a33e-e600681be04f] succeeded in 0.002586417999737023s: None
+[2025-02-23 15:13:01,619: INFO/MainProcess] Task crawler.tasks.crawl[49952ff5-4c3f-484f-86d1-cdad5490515c] received
+[2025-02-23 15:13:01,620: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 15:13:01,622: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[49952ff5-4c3f-484f-86d1-cdad5490515c] succeeded in 0.0027297169999656035s: None
+[2025-02-23 15:13:31,619: INFO/MainProcess] Task crawler.tasks.crawl[2c68cf96-cc2d-4503-b0bf-2f9e83c75c17] received
+[2025-02-23 15:13:31,620: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 15:13:31,622: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[2c68cf96-cc2d-4503-b0bf-2f9e83c75c17] succeeded in 0.0025764239999261918s: None
+[2025-02-23 15:14:01,619: INFO/MainProcess] Task crawler.tasks.crawl[cfd1a9cd-407a-448d-a565-48ffce90f618] received
+[2025-02-23 15:14:01,620: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 15:14:01,622: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[cfd1a9cd-407a-448d-a565-48ffce90f618] succeeded in 0.002573080000729533s: None
+[2025-02-23 15:14:31,619: INFO/MainProcess] Task crawler.tasks.crawl[dd975e98-aa23-401b-be65-40b1ccd70bc9] received
+[2025-02-23 15:14:31,620: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 15:14:31,622: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[dd975e98-aa23-401b-be65-40b1ccd70bc9] succeeded in 0.002534257000661455s: None
+[2025-02-23 15:15:01,619: INFO/MainProcess] Task crawler.tasks.crawl[e081b30d-274f-4964-94d5-70c30692801c] received
+[2025-02-23 15:15:01,619: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 15:15:01,622: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[e081b30d-274f-4964-94d5-70c30692801c] succeeded in 0.0025763769999684882s: None
+[2025-02-23 15:15:31,619: INFO/MainProcess] Task crawler.tasks.crawl[b01b8b99-ff0c-4e36-b8f2-8cd120fca9d2] received
+[2025-02-23 15:15:31,620: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 15:15:31,622: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[b01b8b99-ff0c-4e36-b8f2-8cd120fca9d2] succeeded in 0.0025831840002865647s: None
+[2025-02-23 15:16:01,619: INFO/MainProcess] Task crawler.tasks.crawl[8d7c808f-3244-4376-9b9e-acda8610bac9] received
+[2025-02-23 15:16:01,620: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 15:16:01,622: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[8d7c808f-3244-4376-9b9e-acda8610bac9] succeeded in 0.002554720000262023s: None
+[2025-02-23 15:16:31,619: INFO/MainProcess] Task crawler.tasks.crawl[1cf505c2-ffce-4914-90fc-6dc38794a023] received
+[2025-02-23 15:16:31,620: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 15:16:31,623: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[1cf505c2-ffce-4914-90fc-6dc38794a023] succeeded in 0.0028794059999199817s: None
+[2025-02-23 15:17:01,620: INFO/MainProcess] Task crawler.tasks.crawl[69e3de1f-d8d5-4bb3-9de0-ed5d45cea581] received
+[2025-02-23 15:17:01,621: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 15:17:01,624: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[69e3de1f-d8d5-4bb3-9de0-ed5d45cea581] succeeded in 0.0028897709999000654s: None
+[2025-02-23 15:17:31,620: INFO/MainProcess] Task crawler.tasks.crawl[4c8bd171-e05e-4573-a03d-5eef90629beb] received
+[2025-02-23 15:17:31,621: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 15:17:31,624: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[4c8bd171-e05e-4573-a03d-5eef90629beb] succeeded in 0.0030154799997035298s: None
+[2025-02-23 15:18:01,619: INFO/MainProcess] Task crawler.tasks.crawl[c4e3f2ff-060d-43c8-83d1-5f337260d082] received
+[2025-02-23 15:18:01,620: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 15:18:01,623: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[c4e3f2ff-060d-43c8-83d1-5f337260d082] succeeded in 0.0027002159995390684s: None
+[2025-02-23 15:18:31,619: INFO/MainProcess] Task crawler.tasks.crawl[a208fb1a-bf64-4e67-8d03-db5affc78876] received
+[2025-02-23 15:18:31,620: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 15:18:31,623: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[a208fb1a-bf64-4e67-8d03-db5affc78876] succeeded in 0.0027489229996717768s: None
+[2025-02-23 20:20:02,594: INFO/MainProcess] Task crawler.tasks.crawl[7d13fafd-2244-43b4-afba-2c07fb12df31] received
+[2025-02-23 20:20:02,595: INFO/ForkPoolWorker-16] Crawl task started
+[2025-02-23 20:20:02,598: INFO/ForkPoolWorker-16] Task crawler.tasks.crawl[7d13fafd-2244-43b4-afba-2c07fb12df31] succeeded in 0.0027537220003068796s: None

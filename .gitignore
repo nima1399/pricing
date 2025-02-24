@@ -1,10 +1,14 @@
 # .gitignore file in the root directory
 
 # Ignore the .env file
-.env
+**/.env
 
 # Ignore virtual environment directory
-/venv
+**/.venv
 
 # Ignore PyCharm project files
-.idea
+**/.idea
+
+**/htmlcov
+
+**/__pycache__

@@ -12,25 +12,20 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from __future__ import absolute_import, unicode_literals
 
+# Quick-start development settings - unsuitable for production
+# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
-
-from dotenv import load_dotenv
-import os
-from decouple import config
-
-
-SECRET_KEY = config("SECRET_KEY")
+SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -43,7 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "crawler",
-    'rest_framework',
+    "rest_framework",
 ]
 
 MIDDLEWARE = [
@@ -80,20 +75,14 @@ WSGI_APPLICATION = "base.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": BASE_DIR / "db.sqlite3",
-#     }
-# }
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'pricing',  # Replace with your database name
-        'USER': 'Nima',   # Replace with your PostgreSQL username
-        'PASSWORD': 'nima1234',  # Replace with your PostgreSQL password
-        'HOST': 'localhost',  # Set to the database server address (or use an IP)
-        'PORT': '5432',  # Default PostgreSQL port
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": os.getenv("DB_NAME", "price"),
+        "USER": os.getenv("DB_USER", "nima"),
+        "PASSWORD": os.getenv("DB_PASSWORD", "nima1234"),
+        "HOST": os.getenv("DB_HOST", "localhost"),
+        "PORT": os.getenv("DB_PORT", "5432"),
     }
 }
 
@@ -139,10 +128,12 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Celery settings
-CELERY_BROKER_URL = "redis://localhost:6379/0"
+CELERY_BROKER_URL = "redis://redis:6379/0"
 # CELERY_BEAT_SCHEDULE = {
 #     'run-every-30-seconds': {
 #         'task': 'base.tasks.crawl',
 #         'schedule': 30.0,
 #     },
 # }
+
+# CELERY_TASK_ALWAYS_EAGER = True

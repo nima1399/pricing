@@ -8,7 +8,6 @@ logger = logging.getLogger(__name__)
 
 
 class BaseCrawlService:
-
     def __init__(self, conf: CrawlConfig):
         self._conf = conf
 
@@ -18,7 +17,6 @@ class BaseCrawlService:
 
 
 class NobitexCrawlService(BaseCrawlService):
-
     def fetch(self):
         response = self._get_response()
         price = self._get_price(response)

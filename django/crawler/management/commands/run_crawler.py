@@ -1,4 +1,5 @@
 import subprocess
+
 from django.core.management.base import BaseCommand
 
 
@@ -18,7 +19,7 @@ class Command(BaseCommand):
                 "--",
                 "bash",
                 "-c",
-                "celery -A base worker --loglevel=info; exec bash",
+                "celery -A base worker --loglevel=debug; exec bash",
             ]
         )
 
@@ -30,7 +31,7 @@ class Command(BaseCommand):
                 "--",
                 "bash",
                 "-c",
-                "celery -A base beat --loglevel=info; exec bash",
+                "celery -A base beat --loglevel=debug; exec bash",
             ]
         )
 

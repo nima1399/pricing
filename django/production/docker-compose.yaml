@@ -1,0 +1,130 @@
+version: '3.8'
+
+services:
+  django:
+    build:
+      context: ..
+      dockerfile: production/Dockerfile.django
+    container_name: django
+    ports:
+      - "8002:8002"
+    environment:
+      - KAFKA_BROKER=kafka:9093
+      - CELERY_BROKER_URL=redis://redis:6380/0
+      - DJANGO_SETTINGS_MODULE=base.settings
+      - SECRET_KEY=django-insecure-xo15dj)1l8y9&_b^nz433ie@hc!=e)fpsp1y0iqk@vxr5#k9@(
+      - CURRENCIES_KAFKA_TOPIC=currency
+      - DB_PASSWORD=nima12345
+      - DB_HOST=postgres
+    depends_on:
+      - redis
+      - postgres
+
+  fastapi:
+    build:
+      context: ../../fastApiProject
+      dockerfile: Dockerfile
+    container_name: fastapi
+    command: ["./.venv/bin/uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8001", "--log-level", "debug"]
+    environment:
+      - SENDER_EMAIL=hekmatinima88@gmail.com
+      - SENDER_EMAIL_PASSWORD=gvvt jylx sgyv jpem
+      - TOPIC=my_topic
+      - GROUP_ID=my_group
+      - KAFKA_BROKER=kafka:9093
+      - DJANGO_API_URL=http://django:8002/
+      - CURRENCIES_KAFKA_TOPIC=currency
+    ports:
+      - "8001:8001"
+
+    depends_on:
+      kafka:
+        condition: service_healthy
+      django:
+        condition: service_started
+
+  celery_worker:
+    build:
+      context: ..
+      dockerfile: production/Dockerfile.celery
+    container_name: celery_worker
+    command: [".venv/bin/celery", "-A", "base", "worker", "--loglevel=debug"]
+    environment:
+      - CELERY_BROKER_URL=redis://redis:6380/0
+      - DJANGO_SETTINGS_MODULE=base.settings
+      - KAFKA_BROKER=kafka:9093
+      - CURRENCIES_KAFKA_TOPIC=currency
+    depends_on:
+      - django
+      - redis
+      - kafka
+
+
+  celery_beat:
+    build:
+      context: ..
+      dockerfile: production/Dockerfile.celery
+    container_name: celery_beat
+    command: [".venv/bin/celery", "-A", "base", "beat", "--loglevel=debug"]
+    environment:
+      - CELERY_BROKER_URL=redis://redis:6380/0
+      - DJANGO_SETTINGS_MODULE=base.settings
+    depends_on:
+      - django
+      - redis
+      - kafka
+
+
+
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    hostname: kafka
+    container_name: kafka
+    ports:
+      - "9094:9094"
+      - "9093:9093"
+    environment:
+      KAFKA_KRAFT_MODE: "true"
+      KAFKA_PROCESS_ROLES: controller,broker
+      KAFKA_NODE_ID: 1
+      KAFKA_CONTROLLER_QUORUM_VOTERS: "1@kafka:9094"
+      KAFKA_LISTENERS: PLAINTEXT://kafka:9093,CONTROLLER://kafka:9094
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,CONTROLLER:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9093
+      KAFKA_LOG_DIRS: /var/lib/kafka/data
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_LOG_RETENTION_HOURS: 168
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      CLUSTER_ID: "Mk3OEYBSD34fcwNTJENDM2Qk"
+    healthcheck:
+      test: [ "CMD", "kafka-topics", "--bootstrap-server", "kafka:9093", "--list" ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+
+
+  redis:
+    image: redis:6
+    container_name: redis
+    command: ["redis-server", "--port", "6380"]
+    ports:
+      - "6380:6380"
+
+  postgres:
+    image: postgres:15
+    container_name: postgres
+    environment:
+      POSTGRES_USER: nima
+      POSTGRES_PASSWORD: nima12345
+      POSTGRES_DB: price
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

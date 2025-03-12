@@ -4,13 +4,15 @@ Django app is always imported when Celery starts.
 """
 
 from __future__ import absolute_import, unicode_literals
-import os
-from celery import Celery
-import django
 
-django.setup()
+import os
+
+import django
+from celery import Celery
 
 from crawler.tasks import crawl
+
+django.setup()
 
 
 # Set the default Django settings module for the 'celery' program.

@@ -1,18 +1,18 @@
- 
+
  -------------- celery@nima-ROG-Strix-G614JI-G614JI v5.4.0 (opalescent)
---- ***** ----- 
+--- ***** -----
 -- ******* ---- Linux-6.11.0-17-generic-x86_64-with-glibc2.39 2025-02-23 14:03:49
-- *** --- * --- 
+- *** --- * ---
 - ** ---------- [config]
 - ** ---------- .> app:         base:0x740cf6349bb0
 - ** ---------- .> transport:   redis://localhost:6379/0
 - ** ---------- .> results:     disabled://
 - *** --- * --- .> concurrency: 20 (prefork)
 -- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
---- ***** ----- 
+--- ***** -----
  -------------- [queues]
                 .> celery           exchange=celery(direct) key=celery
-                
+
 
 [tasks]
   . crawler.tasks.crawl

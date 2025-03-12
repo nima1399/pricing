@@ -6,7 +6,6 @@ logger = logging.getLogger(__name__)
 
 
 class RequestProcessor:
-
     def __init__(
         self,
         url,

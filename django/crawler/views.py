@@ -1,13 +1,9 @@
-
-from django.core.serializers import serialize
-from rest_framework import generics, status
+from rest_framework import generics
 from rest_framework.permissions import AllowAny
-from rest_framework.response import Response
 
-from crawler.api_services.db_service import DatabaseService
-from crawler.models import ValuableObject
-from crawler.api_services.celery_service import CeleryService
-from crawler.serializers import UserSerializer
+from crawler.serializers import UserSerializer, ValuableObjectSerializer
+from crawler.services.celery_service import CeleryService
+from crawler.services.db_service import DatabaseService
 
 
 class StartCeleryView(generics.GenericAPIView):
@@ -16,11 +12,12 @@ class StartCeleryView(generics.GenericAPIView):
     def post(self, request, *args, **kwargs):
         CeleryService.run_celery()
 
+
 class GetValuableObjectView(generics.GenericAPIView):
     permission_classes = [AllowAny]
 
     def get(self, request, *args, **kwargs):
-        DatabaseService.get_valuable_object_titles()
+        return DatabaseService.get_valuable_objects()
 
 
 class RegisterUserView(generics.CreateAPIView):
@@ -32,6 +29,7 @@ class RegisterUserView(generics.CreateAPIView):
         serializer.is_valid(raise_exception=True)
         return DatabaseService.register_user(serializer.validated_data)
 
+
 class AddSubscriptionView(generics.GenericAPIView):
     permission_classes = [AllowAny]
     serializer_class = UserSerializer
@@ -41,6 +39,7 @@ class AddSubscriptionView(generics.GenericAPIView):
         serializer.is_valid(raise_exception=True)
         return DatabaseService.add_subscription(serializer.validated_data)
 
+
 class RemoveSubscriptionView(generics.GenericAPIView):
     permission_classes = [AllowAny]
     serializer_class = UserSerializer
@@ -49,3 +48,13 @@ class RemoveSubscriptionView(generics.GenericAPIView):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         return DatabaseService.remove_subscription(serializer.validated_data)
+
+
+class GetEmailsForSubscriptionView(generics.GenericAPIView):
+    permission_classes = [AllowAny]
+    serializer_class = ValuableObjectSerializer
+
+    def get(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.query_params)
+        serializer.is_valid(raise_exception=True)
+        return DatabaseService.get_emails_for_subscription(serializer.validated_data)

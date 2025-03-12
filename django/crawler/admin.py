@@ -1,11 +1,12 @@
 from django.contrib import admin
+
 from crawler.models import (
-    ValuableObject,
-    ValuableGroup,
-    ValuableRecord,
     CrawlConfig,
     CrawlSource,
     User,
+    ValuableGroup,
+    ValuableObject,
+    ValuableRecord,
 )
 
 
@@ -47,6 +48,7 @@ class CrawlSourceAdmin(admin.ModelAdmin):
     list_filter = ("is_valid", "type")
     actions = ["delete_selected"]
 
+
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
     list_display = ("email", "get_subscribed_valuables")
@@ -54,5 +56,12 @@ class UserAdmin(admin.ModelAdmin):
     actions = ["delete_selected"]
 
     def get_subscribed_valuables(self, obj):
-        return ", ".join([valuable.title for valuable in obj.subscribed_valuables.all() if not valuable.is_deleted])
+        return ", ".join(
+            [
+                valuable.title
+                for valuable in obj.subscribed_valuables.all()
+                if not valuable.is_deleted
+            ]
+        )
+
     get_subscribed_valuables.short_description = "Subscribed Valuables"

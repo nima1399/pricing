@@ -1,0 +1,26 @@
+version: '3'
+
+tasks:
+  test:
+    cmds:
+      - pytest crawler
+  coverage:
+    cmds:
+      - pytest crawler --cov --cov-fail-under=90 --cov-report=term --cov-report=xml:coverage.xml
+  coverage-report:
+    cmds: 
+      - pytest crawler --cov --cov-report=html
+  format:
+    cmds:
+      - ruff format
+      - ruff check --select I --fix
+  lint:
+    cmds:
+      - ruff check
+      - ruff format --check
+  fix:
+    cmds:
+      - ruff check --fix
+  type-check:
+   cmds:
+      - mypy -p crawler

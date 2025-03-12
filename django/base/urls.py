@@ -17,15 +17,34 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from crawler.views import StartCeleryView, GetValuableObjectView, RegisterUserView
 
-
-
-
+from crawler.views import (
+    AddSubscriptionView,
+    GetEmailsForSubscriptionView,
+    GetValuableObjectView,
+    RegisterUserView,
+    RemoveSubscriptionView,
+    StartCeleryView,
+)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("start-celery/", StartCeleryView.as_view(), name="start_celery"),
-    path("get-valuable-object/", GetValuableObjectView.as_view(), name="get_valuable_object"),
+    path(
+        "get-valuable-object/",
+        GetValuableObjectView.as_view(),
+        name="get_valuable_object",
+    ),
     path("register/", RegisterUserView.as_view(), name="register"),
+    path("add-subscription/", AddSubscriptionView.as_view(), name="add_subscription"),
+    path(
+        "remove-subscription/",
+        RemoveSubscriptionView.as_view(),
+        name="remove_subscription",
+    ),
+    path(
+        "get-emails-for-subscription/",
+        GetEmailsForSubscriptionView.as_view(),
+        name="get_emails_for_subscription",
+    ),
 ]

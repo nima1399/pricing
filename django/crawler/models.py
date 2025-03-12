@@ -1,5 +1,4 @@
 import uuid
-from email.policy import default
 
 from django.db import models
 from django.utils import timezone
@@ -7,8 +6,6 @@ from django.utils import timezone
 from core.manager import ActiveManager
 
 
-# Create your models here.
-#abstraction
 class BaseModel(models.Model):
     create_date = models.DateTimeField(auto_now_add=True)
     update_date = models.DateTimeField(auto_now=True)
@@ -85,6 +82,7 @@ class ValuableRecord(BaseModel):
     def __str__(self):
         return f"{self.crawl_config.crawl_source.title} - {self.crawl_config.valuable_object.title}"
 
+
 class User(BaseModel):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     email = models.EmailField(unique=True)
@@ -92,5 +90,3 @@ class User(BaseModel):
 
     def __str__(self):
         return self.email
-
-    

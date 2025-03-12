@@ -1,34 +1,36 @@
-from aiokafka import AIOKafkaConsumer
-import asyncio
+import json
+from kafka import KafkaConsumer
 from decouple import config
+from logger import logger
+from message_handler import MessageHandler
 
-TOPIC = config("TOPIC")
-GROUP_ID = config("GROUP_ID")
-BOOTSTRAP_SERVERS = "localhost:9092"
+KAFKA_BROKER = config("KAFKA_BROKER")
 
 
 class KafkaService:
+    has_running_consumer = False
+
     @classmethod
-    async def consume(cls):
-        while True:
-            consumer = AIOKafkaConsumer(
-                TOPIC,
-                bootstrap_servers=BOOTSTRAP_SERVERS,
-                group_id=GROUP_ID,
-                enable_auto_commit=True
+    async def consume_messages(cls, currency_topic):
+        if cls.has_running_consumer:
+            raise Exception("Consumer is already running!")
+
+        consumer = KafkaConsumer(
+            currency_topic,
+            bootstrap_servers=KAFKA_BROKER,
+            key_deserializer=lambda k: k.decode("utf-8") if k else None,
+            value_deserializer=lambda v: json.loads(v.decode("utf-8")),
+            auto_offset_reset="latest",
+            enable_auto_commit=True,
+            group_id="crypto_price_group",
+        )
+
+        consumer.poll(timeout_ms=1000)
+        consumer.seek_to_end()
+
+        logger.info("Kafka Consumer is running...")
+        for message in consumer:
+            logger.info(
+                f"Received {message.key} | Timestamp: {message.value['timestamp']} | Price: {message.value['price']}"
             )
-
-            await consumer.start()
-            try:
-                async for msg in consumer:
-                    print(f"Received message: {msg.value.decode()}")
-            except Exception as e:
-                print(f"Error in consumer: {e}, restarting...")
-            finally:
-                await consumer.stop()
-                await asyncio.sleep(5)  # Small delay before restarting
-
-
-if __name__ == "__main__":
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(KafkaService.consume())
+            MessageHandler.handle_message(message)
